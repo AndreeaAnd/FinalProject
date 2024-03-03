@@ -24,7 +24,7 @@ def register(request):
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
 
-        if password1 and password2 and password1 != password2:
+        if password1 != password2:
             messages.error(request, 'Passwords do not match.')
             return render(request, 'users/register.html', {'form': form})
 
